@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { ApolloClient, InMemoryCache , ApolloProvider} from '@apollo/client';
 import ProductContext from "./context/ProductContext"
 import  {useProductContext}  from "./context/useProductContext";
+// import { RestLink } from 'apollo-link-rest';
 
 
 function App() {
@@ -29,18 +30,20 @@ function App() {
 
 const magentoUrl = "https://magento02.revovideo.io/graphql"
  const magentoAuth = {"Authorization" :`Bearer ${magento_access_token}`}
+//  const restlink = new RestLink({uri:magentoUrl,headers:magentoAuth})
 
-  // const client = new ApolloClient({
-  //   uri:shopifyUrl,
-  //   headers : shopifyAuth,
-  //   cache: new InMemoryCache(),
-  // });
 
-    const client = new ApolloClient({
-    uri:magentoUrl,
-    headers : magentoAuth,
+  const client = new ApolloClient({
+    uri:shopifyUrl,
+    headers : shopifyAuth,
     cache: new InMemoryCache(),
   });
+
+  //   const client = new ApolloClient({
+  //   uri:magentoUrl,
+  //   headers : magentoAuth,
+  //   cache: new InMemoryCache(),
+  // });
 
   return (
     <ApolloProvider client={client}>
