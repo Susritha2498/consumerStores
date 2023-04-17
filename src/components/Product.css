@@ -1,0 +1,25 @@
+.ProductCard{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-content: center;
+    margin: 20px;
+}
+
+.ProductImage{
+    width: 100px;
+    height:100px;
+}
+
+#ProductTitle{
+    width:30%;
+    margin:20px;
+}
+
+#ProductImg{
+    width:40%;
+    height:100%;
+    margin: 20px;
+    box-shadow: 20px 10px 20px grey;
+}
